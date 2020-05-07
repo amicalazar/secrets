@@ -186,7 +186,7 @@ app.post("/submit", (req, res) => {
             console.log(err);
         } else {
             if (foundUser) {
-                foundUser.secret = submittedSecret;
+                foundUser.secret.push(submittedSecret);
                 foundUser.save(function(){
                     res.redirect("/secrets");
                 });
